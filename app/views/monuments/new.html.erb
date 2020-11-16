@@ -1,2 +1,15 @@
-<h1>Monuments#new</h1>
-<p>Find me in app/views/monuments/new.html.erb</p>
+<%= render 'navbar' %>
+
+<div class="container">
+  <h1>New Monument</h1>
+
+  <%= render 'form', monument: @monument %>
+
+  <hr>
+
+  <%= link_to 'Back', monuments_path, class: "btn btn-flat" %>
+</div>
+
+
+
+<%= render 'footer' %>
