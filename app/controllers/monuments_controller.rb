@@ -1,5 +1,6 @@
 class MonumentsController < ApplicationController
   def index
+    @monuments = Monument.all
   end
 
   def show
