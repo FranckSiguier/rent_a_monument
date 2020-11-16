@@ -1,2 +1,11 @@
-<h1>Monuments#show</h1>
-<p>Find me in app/views/monuments/show.html.erb</p>
+<%= render 'navbar' %>
+
+<div class="container">
+  <h1><%= @monument.name %></h1>
+  <% if @monument.photos.attached? %>
+    <%= cl_image_tag monument.photos[0].key, height: 150, width: 200, crop: :fill , class: "text-center"%>
+  <% end %>
+  <p><%= @monument.description %></p>
+</div>
+
+<%= render 'footer' %>

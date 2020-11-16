@@ -9,8 +9,8 @@
 <% @monuments.each do |monument| %>
   <div class="container">
     <div class="card-product">
-      <% if monument.photo.attached? %>
-        <%= cl_image_tag monument.photo.key, height: 150, width: 200, crop: :fill , class: "text-center"%>
+      <% if monument.photos.attached? %>
+        <%= cl_image_tag monument.photos[0].key, height: 150, width: 200, crop: :fill , class: "text-center"%>
       <% end %>
       <div class="card-product-infos">
         <h2><%= monument.name %></h2>
