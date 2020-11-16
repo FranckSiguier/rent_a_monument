@@ -6,6 +6,14 @@
 #   movies = Movie.new([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.new(name: 'Luke', movie: movies.first)
 
+# puts "Destroying all"
+
+# User.destroy_all
+# Monument.destroy_all
+# Review.destroy_all
+# Booking.destroy_all
+
+# puts "Finished!"
 
 puts "Creating seeds...."
 
@@ -24,7 +32,7 @@ user1.photo.attach(io: URI.open(user_images[0]), filename: 'user.jpg', content_t
 user2.photo.attach(io: URI.open(user_images[1]), filename: 'user.jpg', content_type: 'image/jpg')
 user3.photo.attach(io: URI.open(user_images[2]), filename: 'user.jpg', content_type: 'image/jpg')
 
-user1.save!
+user1.save
 user2.save
 user3.save
 
@@ -33,23 +41,22 @@ monument2 = Monument.new(name: "Le Taj Mahal", price_per_night: 10, description:
 monument3 = Monument.new(name: "Chichen Itza", price_per_night: 8, description: "La plus chouette des pyramides!", average_rating: 4)
 monument4 = Monument.new(name: "Petra", price_per_night: 6, description: "Le desert, c'est super!", average_rating: 5)
 
-monument1.photo.attach(io: URI.open(monument_images[0]), filename: 'monument.jpg', content_type: 'image/jpg')
-monument1.photo.attach(io: URI.open(monument_images[1]), filename: 'monument.jpg', content_type: 'image/jpg')
-monument1.photo.attach(io: URI.open(monument_images[2]), filename: 'monument.jpg', content_type: 'image/jpg')
+monument1.photos.attach(io: URI.open(monument_images[0]), filename: 'monument.jpg', content_type: 'image/jpg')
+monument1.photos.attach(io: URI.open(monument_images[1]), filename: 'monument.jpg', content_type: 'image/jpg')
+monument1.photos.attach(io: URI.open(monument_images[2]), filename: 'monument.jpg', content_type: 'image/jpg')
 
-monument2.photo.attach(io: URI.open('https://img.itinari.com/pages/images/original/9f615ca8-8bbb-46a6-85a2-b4825f815ba1-44829498324_77297564a1_k.jpg?ch=DPR&dpr=1&w=1600&s=2e8624c73358e5afd755157c2c739c57'), filename: 'monument.jpg', content_type: 'image/jpg')
-monument2.photo.attach(io: URI.open("https://i.pinimg.com/564x/11/c5/1d/11c51d68ebec40f6e9cc1e7326afb197.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
-monument2.photo.attach(io: URI.open("https://i.pinimg.com/564x/c8/3f/16/c83f16696a8cfb700897cb68446c0716.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument2.photos.attach(io: URI.open('https://img.itinari.com/pages/images/original/9f615ca8-8bbb-46a6-85a2-b4825f815ba1-44829498324_77297564a1_k.jpg?ch=DPR&dpr=1&w=1600&s=2e8624c73358e5afd755157c2c739c57'), filename: 'monument.jpg', content_type: 'image/jpg')
+monument2.photos.attach(io: URI.open("https://i.pinimg.com/564x/11/c5/1d/11c51d68ebec40f6e9cc1e7326afb197.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument2.photos.attach(io: URI.open("https://i.pinimg.com/564x/c8/3f/16/c83f16696a8cfb700897cb68446c0716.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
 
-monument3.photo.attach(io: URI.open("https://mexique-decouverte.com/wp-content/uploads/2019/09/chichen-itza-merveilles.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
-monument3.photo.attach(io: URI.open("https://media.tacdn.com/media/attractions-splice-spp-674x446/07/47/d6/7d.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
-monument3.photo.attach(io: URI.open("https://www.abc-latina.com/images/2018/045-chichen-itza-mexique.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument3.photos.attach(io: URI.open("https://mexique-decouverte.com/wp-content/uploads/2019/09/chichen-itza-merveilles.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument3.photos.attach(io: URI.open("https://media.tacdn.com/media/attractions-splice-spp-674x446/07/47/d6/7d.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument3.photos.attach(io: URI.open("https://www.abc-latina.com/images/2018/045-chichen-itza-mexique.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
 
-monument4.photo.attach(io: URI.open("https://static.nationalgeographic.fr/files/styles/image_3200/public/petra-world-heritage-jordan.jpg?w=1600&h=900"), filename: 'monument.jpg', content_type: 'image/jpg')
-monument4.photo.attach(io: URI.open("https://www.les-covoyageurs.com/ressources/images-lieux/15-visiter-petra-jordanie.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
-monument4.photo.attach(io: URI.open("https://images4.bovpg.net/r/back/fr/sale/5f3f912809fa8o.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument4.photos.attach(io: URI.open("https://static.nationalgeographic.fr/files/styles/image_3200/public/petra-world-heritage-jordan.jpg?w=1600&h=900"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument4.photos.attach(io: URI.open("https://www.les-covoyageurs.com/ressources/images-lieux/15-visiter-petra-jordanie.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
+monument4.photos.attach(io: URI.open("https://images4.bovpg.net/r/back/fr/sale/5f3f912809fa8o.jpg"), filename: 'monument.jpg', content_type: 'image/jpg')
 
-ap user1
 
 monument1.user = user1
 monument2.user = user1
