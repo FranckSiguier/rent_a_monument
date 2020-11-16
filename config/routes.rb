@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'reviews/create'
-  get 'bookings/create'
-  get 'bookings/destroy'
-  get 'monuments/index'
-  get 'monuments/show'
-  get 'monuments/new'
-  get 'monuments/create'
-  get 'monuments/edit'
-  get 'monuments/update'
-  get 'users/show'
+  # get 'reviews/create'
+  # get 'bookings/create'
+  # get 'bookings/destroy'
+  # get 'monuments/index'
+  # get 'monuments/show'
+  # get 'monuments/new'
+  # get 'monuments/create'
+  # get 'monuments/edit'
+  # get 'monuments/update'
+  # get 'users/show'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :monuments, only: [:index, :show] do
