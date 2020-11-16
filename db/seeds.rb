@@ -13,14 +13,12 @@ user_images = ["https://avatars1.githubusercontent.com/u/71550958?s=400&u=5d9c25
 
 monument_images = ["https://static.nationalgeographic.fr/files/styles/image_3200/public/babylonian-oasis-artist-rendering_0.jpg?w=1600","https://www.merveilles-du-monde.com/Sept/images/Jardins-de-Babylone/Jardins-de-Babylone-01.jpg", "https://www.merveilles-du-monde.com/Sept/images/Jardins-de-Babylone/Jardins-de-Babylone-02.jpg"]
 
-# user1 = User.new(first_name: "Toto", last_name: "LeToto", email: "toto@toto.com", password: "123", host: true)
-# user2 = User.new(first_name: "Tata", last_name: "LaTata", email: "tata@toto.com", password: "123", host: false)
-# user3 = User.new(first_name: "Tutu", last_name: "LeTutu", email: "tutu@toto.com", password: "123", host: false)
 
 
-user1 = User.new(email: "toto@toto.com", password: "123456", host: true)
-user2 = User.new(email: "tata@toto.com", password: "123456", host: false)
-user3 = User.new(email: "tutu@toto.com", password: "123456", host: false)
+
+user1 = User.new(first_name: "Toto", last_name: "LeToto", email: "toto@toto.com", password: "123", host: true)
+user2 = User.new(first_name: "Tata", last_name: "LaTata", email: "tata@toto.com", password: "123", host: false)
+user3 = User.new(first_name: "Tutu", last_name: "LeTutu", email: "tutu@toto.com", password: "123", host: false)
 
 user1.photo.attach(io: URI.open(user_images[0]), filename: 'user.jpg', content_type: 'image/jpg')
 user2.photo.attach(io: URI.open(user_images[1]), filename: 'user.jpg', content_type: 'image/jpg')
