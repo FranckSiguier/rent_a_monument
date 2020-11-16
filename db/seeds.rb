@@ -16,9 +16,9 @@ monument_images = ["https://static.nationalgeographic.fr/files/styles/image_3200
 
 
 
-user1 = User.new(first_name: "Toto", last_name: "LeToto", email: "toto@toto.com", password: "123", host: true)
-user2 = User.new(first_name: "Tata", last_name: "LaTata", email: "tata@toto.com", password: "123", host: false)
-user3 = User.new(first_name: "Tutu", last_name: "LeTutu", email: "tutu@toto.com", password: "123", host: false)
+user1 = User.new(first_name: "Toto", last_name: "LeToto", email: "toto@toto.com", password: "123456", host: true)
+user2 = User.new(first_name: "Tata", last_name: "LaTata", email: "tata@toto.com", password: "123456", host: false)
+user3 = User.new(first_name: "Tutu", last_name: "LeTutu", email: "tutu@toto.com", password: "123456", host: false)
 
 user1.photo.attach(io: URI.open(user_images[0]), filename: 'user.jpg', content_type: 'image/jpg')
 user2.photo.attach(io: URI.open(user_images[1]), filename: 'user.jpg', content_type: 'image/jpg')
