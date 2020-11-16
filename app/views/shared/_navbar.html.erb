@@ -17,9 +17,12 @@
           <%= link_to "Home", monuments_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+          <% else %>
+            <%= icon('fas', 'user') %>
+          <% end %>
           <%#= link_to user_path(current_user) do %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar" %>
-          <% #end %>
         </li>
       <% else %>
         <li class="nav-item d-flex">
