@@ -4,15 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :photo
-
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-
-  has_many :bookings
-  has_many :monuments
-  has_many :reviews
+  has_many :bookings, dependent: :destroy
+  has_many :monuments, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
+
+  validates :first_name, :last_name, :email, :password, presence: true
+  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, uniqueness: true
+  validates :first_name, uniqueness: { scope: :last_name }
+
 end

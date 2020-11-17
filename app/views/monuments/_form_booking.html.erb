@@ -1,0 +1,8 @@
+  <div class="form">
+    <h3>Add a booking</h3>
+<%= simple_form_for [ @monument, @booking ] do |f| %>
+  <%= f.input :date_of_arrival %>
+  <%= f.input :duration %>
+  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+<% end %>
+</div>
