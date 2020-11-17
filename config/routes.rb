@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
     resources :bookings, only: [:create]
   end
-  resources :user, only: :show
+  resources :users, only: :show
 
   resources :bookings, only: :destroy
   root to: 'pages#home'
