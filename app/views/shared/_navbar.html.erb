@@ -18,13 +18,14 @@
         </li>
         <li class="nav-item">
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Add another action in Views navbar", "#", class: "dropdown-item" %>
+            </div>
           <% else %>
             <%= icon('fas', 'user') %>
           <% end %>
-          <%#= link_to user_path(current_user) do %>
-          <% #end %>
-
         </li>
       <% else %>
         <li class="nav-item d-flex">
