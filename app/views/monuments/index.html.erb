@@ -5,17 +5,15 @@
 <div class="container">
     <div class="cards">
       <% @monuments.each do |monument| %>
-      <div class="card-monument">
-        <div class="card-img">
-           <%= link_to monument_path(monument) do %>
-          <%= image_tag cl_image_path monument.photos[0].key %>
-          <% end %>
-        </div>
-        <div class="card-info">
-          <p><%= monument.name %></p>
-          <p><%= monument.average_rating %> <i class="fas fa-star"></i></p>
-        </div>
-      </div>
+        <%= link_to monument_path(monument), class: 'card-monument' do %>
+            <div class="card-img">
+              <%= image_tag cl_image_path monument.photos[0].key %>
+            </div>
+            <div class="card-info">
+              <p><%= monument.name %></p>
+              <p><%= monument.average_rating %> <i class="fas fa-star"></i></p>
+            </div>
+        <% end %>
       <% end %>
     </div>
   </div>
