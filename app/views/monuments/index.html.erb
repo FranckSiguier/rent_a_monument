@@ -1,22 +1,21 @@
 <div class="container">
-  <h1>Monuments#index</h1>
-  <p>Find me in app/views/monuments/index.html.erb</p>
+  <h1>Monuments</h1>
 </div>
 
-
-<% @monuments.each do |monument| %>
-  <div class="container">
-    <div class="card-product">
-      <% if monument.photos.attached? %>
-        <%= cl_image_tag monument.photos[0].key, height: 150, width: 200, crop: :fill , class: "text-center"%>
-      <% end %>
-      <div class="card-product-infos">
-        <h2><%= monument.name %></h2>
-        <p>
-          <% monument.description %>
-        </p>
-        <%= link_to 'Show', monument_path(monument), class: "btn btn-ghost" %>
+<div class="container">
+    <div class="cards">
+      <% @monuments.each do |monument| %>
+      <div class="card-monument">
+        <div class="card-img">
+           <%= link_to monument_path(monument) do %>
+          <%= image_tag cl_image_path monument.photos[0].key %>
+          <% end %>
+        </div>
+        <div class="card-info">
+          <p><%= monument.name %></p>
+          <p><%= monument.average_rating %> <i class="fas fa-star"></i></p>
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
-<% end %>
