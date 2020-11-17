@@ -10,13 +10,13 @@ class MonumentsController < ApplicationController
 
   def new
     @monument = Monument.new
-    authorize @restaurant
+    authorize @monument
   end
 
   def create
     @monument = Monument.new(monument_params)
     @monument.user = current_user
-    authorize @restaurant
+    authorize @monument
 
     if @monument.save
       @monument.user.host = true
