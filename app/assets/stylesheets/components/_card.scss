@@ -18,6 +18,7 @@
 
 
 .card-monument img {
+  opacity: 0.9;
   border-radius: 12px;
   height: 100%;
   width: 100%;
@@ -31,12 +32,13 @@
 }
 
 .card-monument img:hover {
-    transition: all 0.2s ease-out;
-    box-shadow: 0px 4px 8px rgba(38,38,38,0.2);
-    top: -4px;
-    color: white;
-    opacity: 1;
-    border: 2px solid white;
+  opacity: 1;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38,38,38,0.2);
+  top: -4px;
+  color: white;
+  opacity: 1;
+  border: 2px solid white;
 }
 
 a:hover {
