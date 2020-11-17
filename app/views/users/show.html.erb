@@ -14,15 +14,18 @@
   <% if current_user.monuments.empty? %>
 
     <h2>You have no monuments for instance</h2>
-    <%= link_to 'Add a monument !', new_user_monument_path(current_user)  %>
+    <%= link_to 'Add a monument !', new_user_monument_path(current_user), class: 'btn btn-primary'  %>
 
   <% else %>
 
     <h2>Your monuments :</h2>
-    <% current_user.monuments.each do |monument| %>
-      <%= render 'shared/monument_card', monument: monument %>
-    <% end %>
-    <%= link_to 'Add a monument !', new_user_monument_path(current_user), class: "btn btn-ghost" %>
+
+    <div class="card-container">
+      <% current_user.monuments.each do |monument| %>
+        <%= render 'shared/monument_card', monument: monument %>
+      <% end %>
+    </div>
+    <%= link_to 'Add a monument !', new_user_monument_path(current_user), class: "btn btn-primary add-monument" %>
 
   <% end %>
 </div>
@@ -30,31 +33,38 @@
 <hr>
 
 <div class="container">
-  <h2>Your bookings:</h2>
-  <table class="Bookings table" class="text-center">
-    <thead>
-      <tr>
-        <th scope="col">Monument</th>
-        <th scope="col">Date of arrival</th>
-        <th scope="col">Date of departure</th>
-        <th scope="col">Duration of stay</th>
-        <th scope="col" colspan="4"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @bookings.each do |booking| %>
+  <% if @bookings.empty? %>
+    <div style="height: 20vh;">
+      <h2>You have no bookings for instance,</h2>
+      <%= link_to 'Book a monument !', monuments_path, class: 'btn btn-primary'  %>
+    </div>
+  <% else %>
+    <h2>Your bookings:</h2>
+    <table class="Bookings table" class="text-center">
+      <thead>
         <tr>
-          <td><%= booking.monument.name %></td>
-          <td><%= booking.date_of_arrival %></td>
-          <td><%= booking.date_of_departure %></td>
-          <td><%= booking.duration %></td>
-          <td><%= link_to 'Create a review', monument_path(booking.monument), class: 'btn btn-primary' %></td>
-          <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <th scope="col">Monument</th>
+          <th scope="col">Date of arrival</th>
+          <th scope="col">Date of departure</th>
+          <th scope="col">Duration of stay</th>
+          <th scope="col" colspan="4"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.monument.name %></td>
+            <td><%= booking.date_of_arrival %></td>
+            <td><%= booking.date_of_departure %></td>
+            <td><%= booking.duration %></td>
+            <td><%= link_to 'Review this monument !', monument_path(booking.monument), class: 'btn btn-outline-primary btn-sm' %></td>
+            <td><%= link_to 'Cancel this booking', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>
 
 
