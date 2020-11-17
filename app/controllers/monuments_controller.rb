@@ -6,7 +6,9 @@ class MonumentsController < ApplicationController
     @monuments = Monument.all
   end
 
-  def show; end
+  def show
+    @review = Review.new
+  end
 
   def new
     @monument = Monument.new
