@@ -3,18 +3,20 @@ class MonumentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @monuments = Monument.all
+    @monuments = policy_scope(Monument).order(created_at: :desc)
   end
 
   def show; end
 
   def new
     @monument = Monument.new
+    authorize @restaurant
   end
 
   def create
     @monument = Monument.new(monument_params)
     @monument.user = current_user
+    authorize @restaurant
 
     if @monument.save
       @monument.user.host = true
@@ -40,5 +42,6 @@ class MonumentsController < ApplicationController
 
   def monument_params
     params.require(:monument).permit(:name, :description, :photos, :price_per_night)
+    authorize @monument
   end
 end
