@@ -8,6 +8,8 @@
   padding-top: 50px;
 }
 .card-monument {
+  display: flex;
+  flex-direction: column;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   // display: flex;
@@ -26,3 +28,6 @@
     object-fit: cover;
 }
 
+.card-img {
+  flex-grow: 1;
+}
