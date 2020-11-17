@@ -7,27 +7,42 @@
   margin-top: 30px;
   padding-top: 50px;
 }
+
 .card-monument {
   display: flex;
   flex-direction: column;
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  // display: flex;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  text-decoration:none;
+  text-decoration: none!important;
+  color: black;
 }
 
 
 .card-monument img {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    -o-object-fit: cover;
-    object-fit: cover;
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .card-img {
   flex-grow: 1;
+}
+
+.card-monument img:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38,38,38,0.2);
+    top: -4px;
+    color: white;
+    opacity: 1;
+    border: 2px solid white;
+}
+
+a:hover {
+  color: black;
+}
+
+.card-info {
+  padding: 12px;
 }
