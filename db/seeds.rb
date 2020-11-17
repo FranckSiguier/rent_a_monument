@@ -35,10 +35,10 @@ user2.photo.attach(io: URI.open(user_images[1]), filename: 'user.jpg', content_t
 user3.photo.attach(io: URI.open(user_images[2]), filename: 'user.jpg', content_type: 'image/jpg')
 user4.photo.attach(io: URI.open(user_images[3]), filename: 'user.jpg', content_type: 'image/jpg')
 
-user1.save
-user2.save
-user3.save
-user4.save
+user1.save!
+user2.save!
+user3.save!
+user4.save!
 
 monument1 = Monument.new(name: "Les Jardins Suspendus", price_per_night: 7, description: "Les jardins suspendus de Babylone, c'est vraiment un chouette potager", average_rating: 5)
 monument2 = Monument.new(name: "Le Taj Mahal", price_per_night: 10, description: "Le Taj Mahal, petit monument sympatique", average_rating: 4)
@@ -81,12 +81,12 @@ monument4.user = user1
 monument5.user = user4
 monument6.user = user4
 
-monument1.save
-monument2.save
-monument3.save
-monument4.save
-monument5.save
-monument6.save
+monument1.save!
+monument2.save!
+monument3.save!
+monument4.save!
+monument5.save!
+monument6.save!
 
 
 
@@ -98,17 +98,17 @@ booking3 = Booking.new(date_of_arrival: "", duration: 3)
 
 booking1.user = user2
 booking1.monument = monument1
-booking1.save
+booking1.save!
 
 
 booking2.user = user3
 booking2.monument = monument3
-booking2.save
+booking2.save!
 
 
 booking3.user = user2
 booking3.monument = monument2
-booking3.save
+booking3.save!
 
 
 review1 = Review.new(rating: 4, title: "Super!", content: "Jai passé un super bon moment")
@@ -117,14 +117,14 @@ review3 = Review.new(rating: 1, title: "NUL!", content: "Jai pas du tout kiffé"
 
 review1.user = user2
 review1.booking = booking2
-review1.save
+review1.save!
 
 review2.user = user3
 review2.booking = booking3
-review2.save
+review2.save!
 
 review3.user = user2
 review3.booking = booking1
-review3.save
+review3.save!
 
 puts "Creating done!"
