@@ -40,6 +40,7 @@ class MonumentsController < ApplicationController
 
   def set_monument
     @monument = Monument.find(params[:id])
+    authorize @monument
   end
 
   def monument_params
