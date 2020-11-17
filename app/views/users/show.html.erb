@@ -30,13 +30,15 @@
 <hr>
 
 <div class="container">
-  <table class="Bookings" class="text-center">
+  <h2>Your bookings:</h2>
+  <table class="Bookings table" class="text-center">
     <thead>
       <tr>
-        <th>Monument</th>
-        <th>Date of arrival</th>
-        <th>Duration of stay</th>
-        <th colspan="3"></th>
+        <th scope="col">Monument</th>
+        <th scope="col">Date of arrival</th>
+        <th scope="col">Date of departure</th>
+        <th scope="col">Duration of stay</th>
+        <th scope="col" colspan="4"></th>
       </tr>
     </thead>
 
@@ -45,9 +47,10 @@
         <tr>
           <td><%= booking.monument.name %></td>
           <td><%= booking.date_of_arrival %></td>
+          <td><%= booking.date_of_departure %></td>
           <td><%= booking.duration %></td>
-          <td><%= link_to 'Create a review', monument_path(booking.monument) %></td>
-          <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Create a review', monument_path(booking.monument), class: 'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>
