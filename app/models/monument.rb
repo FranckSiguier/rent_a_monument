@@ -9,6 +9,7 @@ class Monument < ApplicationRecord
     arr = []
     self.bookings.each do |booking|
       arr << booking.date_of_arrival.between?(arrival, departure)
+      arr << booking.date_of_departure.between?(arrival, departure)
     end
     arr.include?(true)
   end
