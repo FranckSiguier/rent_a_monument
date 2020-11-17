@@ -22,10 +22,37 @@
     <% current_user.monuments.each do |monument| %>
       <%= render 'shared/monument_card', monument: monument %>
     <% end %>
-    <%= link_to 'Add a monument !', new_user_monument_path(current_user)  %>
+    <%= link_to 'Add a monument !', new_user_monument_path(current_user), class: "btn btn-ghost" %>
 
   <% end %>
 </div>
 
+<hr>
 
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <table class="Bookings" class="text-center">
+    <thead>
+      <tr>
+        <th>Monument</th>
+        <th>Date of arrival</th>
+        <th>Duration of stay</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.monument.name %></td>
+          <td><%= booking.date_of_arrival %></td>
+          <td><%= booking.duration %></td>
+          <td><%= link_to 'Create a review', monument_path(booking.monument) %></td>
+          <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

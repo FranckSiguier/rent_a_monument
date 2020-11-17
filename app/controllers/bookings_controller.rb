@@ -6,18 +6,20 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.monument = @monument
 
+    authorize @booking
     if @booking.save!
-      redirect_to monument_path(@monument), notice: 'Booking was successfully created.'
+      redirect_to user_path(current_user), notice: 'Booking was successfully created.'
     else
       redirect_to monument_path(@monument), notice: 'It didnt worked! try again!'
     end
-    authorize @monument
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to user_path(current_user)
   end
-
-  private
 
   def booking_params
     params.require(:booking).permit(:date_of_arrival, :duration)

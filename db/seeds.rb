@@ -90,9 +90,9 @@ monument6.save!
 
 
 
-booking1 = Booking.new(date_of_arrival: "", duration: 14)
-booking2 = Booking.new(date_of_arrival: "", duration: 7)
-booking3 = Booking.new(date_of_arrival: "", duration: 3)
+booking1 = Booking.new(date_of_arrival: "Tue, 10 Nov 2020", duration: 14)
+booking2 = Booking.new(date_of_arrival: "Tue, 10 Nov 2020", duration: 7)
+booking3 = Booking.new(date_of_arrival: "Tue, 10 Nov 2020", duration: 3)
 
 
 
@@ -111,9 +111,9 @@ booking3.monument = monument2
 booking3.save!
 
 
-review1 = Review.new(rating: 4, title: "Super!", content: "Jai passé un super bon moment")
-review2 = Review.new(rating: 5, title: "Jai ADORE!", content: "Cétait vraiment géniale, à réserver sans hésiter!")
-review3 = Review.new(rating: 1, title: "NUL!", content: "Jai pas du tout kiffé")
+review1 = Review.new(rating: 4, title: "Super!", content: "J'ai passé un super bon moment")
+review2 = Review.new(rating: 5, title: "Jai ADORE!", content: "Cétait vraiment génial, à réserver sans hésiter!")
+review3 = Review.new(rating: 1, title: "NUL!", content: "J'ai pas du tout kiffé")
 
 review1.user = user2
 review1.booking = booking2
