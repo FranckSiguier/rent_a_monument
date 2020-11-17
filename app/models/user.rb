@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :monuments
   has_many :reviews
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end
