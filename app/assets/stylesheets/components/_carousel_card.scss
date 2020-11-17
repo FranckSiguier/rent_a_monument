@@ -1,11 +1,34 @@
+.card-container{
+  display: flex;
+  justify-content: space-around;
+  align-item: center;
+  margin-top: 30px;
+  padding-top: 50px;
+}
+
 .card {
-  width: 400px;
+  margin-left: 20px;
   padding: 30px;
+  width: 80%;
+  img {
+    height: 200px;
+  }
+  h4 {
+    margin-top: 10px;
+  }
+  .avatar, p, h5 {
+    margin-left: 10px;
+    height: 39px;
+    font-size: 10px;
+
+  }
 }
 
-.carousel .carousel-item {
-}
-
-.carousel-item img {
-  width: 100%;
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-item: center;
+  height: 100%;
+  padding: 10px;
 }

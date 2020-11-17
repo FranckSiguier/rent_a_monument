@@ -5,11 +5,11 @@
       <% monument.photos.each_with_index do |photo, i| %>
         <% if i == 0 %>
           <div class="carousel-item active">
-            <%= cl_image_tag photo.key, class: "text-center d-block w-100", alt:"First slide"%>
+            <%= cl_image_tag photo.key, class: "text-center d-block w-100", alt:"First slide", crop: :fill%>
           </div>
         <% else %>
           <div class="carousel-item">
-            <%= cl_image_tag photo.key , class: "text-center d-block w-100", alt: "slide number #{i + 1}"%>
+            <%= cl_image_tag photo.key , class: "text-center d-block w-100", alt: "slide number #{i + 1}", crop: :fill %>
           </div>
         <% end %>
       <% end %>
@@ -23,6 +23,17 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+      <h4>Reservations: </h4>
+      <div class="booking-info">
+        <% monument.bookings.each do |booking| %>
+          <div class="booking-p d-flex justify-content-center">
+            <%= cl_image_tag booking.user.photo.key, class: 'avatar' %>
+            <h5><%= booking.user.full_name %></h5>
+            <p>arrival: <%= booking.date_of_arrival %> </p>
+            <p>departure: <%= booking.date_of_departure %> </p>
+          </div>
+        <% end %>
+      </div>
 </div>
 
 

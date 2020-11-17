@@ -19,9 +19,12 @@
   <% else %>
 
     <h2>Your monuments :</h2>
-    <% current_user.monuments.each do |monument| %>
-      <%= render 'shared/monument_card', monument: monument %>
-    <% end %>
+
+    <div class="card-container">
+      <% current_user.monuments.each do |monument| %>
+        <%= render 'shared/monument_card', monument: monument %>
+      <% end %>
+    </div>
     <%= link_to 'Add a monument !', new_user_monument_path(current_user), class: "btn btn-ghost" %>
 
   <% end %>
