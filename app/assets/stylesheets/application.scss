@@ -7,6 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
 
 // Your CSS partials
 @import "components/index";
@@ -24,4 +25,24 @@
 .container {
     max-width: 1400px;
 }
+}
+
+.index-text {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+  padding-top: 25px;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 5px;
+
+  h1 {
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: 500;
+  }
+
+  h5 {
+    font-weight: 50;
+    font-family: 'Poppins', sans-serif;
+  }
 }
