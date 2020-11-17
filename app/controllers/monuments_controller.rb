@@ -17,6 +17,7 @@ class MonumentsController < ApplicationController
   end
 
   def create
+    authorize current_user.monuments
     @monument = Monument.new(monument_params)
     @monument.user = current_user
 
@@ -46,7 +47,7 @@ class MonumentsController < ApplicationController
 
   def monument_params
 
-    params.require(:monument).permit(:name, :description, :photos, :price_per_night)
-    authorize @monument
+    params.require(:monument).permit(:name, :description, :price_per_night, photos: [])
+
   end
 end
