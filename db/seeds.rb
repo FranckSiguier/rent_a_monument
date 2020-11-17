@@ -6,14 +6,14 @@
 #   movies = Movie.new([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.new(name: 'Luke', movie: movies.first)
 
-# puts "Destroying all"
+puts "Destroying all"
 
-# User.destroy_all
-# Monument.destroy_all
-# Review.destroy_all
-# Booking.destroy_all
+User.destroy_all
+Monument.destroy_all
+Review.destroy_all
+Booking.destroy_all
 
-# puts "Finished!"
+puts "Finished!"
 
 puts "Creating seeds...."
 
