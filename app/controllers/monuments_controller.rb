@@ -8,6 +8,7 @@ class MonumentsController < ApplicationController
 
   def show
     @review = Review.new
+    @booking = Booking.new
   end
 
   def new
@@ -28,6 +29,7 @@ class MonumentsController < ApplicationController
     else
       render :new
     end
+    authorize @monument
   end
 
   def edit
