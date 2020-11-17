@@ -11,5 +11,4 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :monuments
   has_many :reviews
-
 end
