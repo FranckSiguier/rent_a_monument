@@ -4,4 +4,12 @@ class Monument < ApplicationRecord
   has_many_attached :photos
   validates_presence_of :name, :description, :price_per_night
   validates :name, uniqueness: true
+
+  def booked?(arrival, departure)
+    arr = []
+    self.bookings.each do |booking|
+      arr << booking.date_of_arrival.between?(arrival, departure)
+    end
+    arr.include?(true)
+  end
 end
