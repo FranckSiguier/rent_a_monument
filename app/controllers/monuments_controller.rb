@@ -25,7 +25,7 @@ class MonumentsController < ApplicationController
     if @monument.save
       @monument.user.host = true
 
-      redirect_to root_path, notice: 'Monument was successfully created.'
+      redirect_to monuments_path, notice: 'Monument was successfully created.'
     else
       render :new
     end
