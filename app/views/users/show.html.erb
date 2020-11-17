@@ -1,2 +1,31 @@
-<h1>Users#show</h1>
+<div class="container">
+
+  <div class="col-s6">
+    <div class="container" style="margin-top: 10px;">
+      <%= cl_image_tag current_user.photo.key, class: 'avatar-large p-10' %>
+      <h1> <%= current_user.full_name %> </h1>
+      <h3>#average_rating</h3>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+
+  <% if current_user.monuments.empty? %>
+
+    <h2>You have no monuments for instance</h2>
+    <%= link_to 'Add a monument !', new_user_monument_path(current_user)  %>
+
+  <% else %>
+
+    <h2>Your monuments :</h2>
+    <% current_user.monuments.each do |monument| %>
+      <%= render 'shared/monument_card', monument: monument %>
+    <% end %>
+    <%= link_to 'Add a monument !', new_user_monument_path(current_user)  %>
+
+  <% end %>
+</div>
+
+
 <p>Find me in app/views/users/show.html.erb</p>
