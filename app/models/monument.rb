@@ -8,12 +8,15 @@ class Monument < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  def booked?(arrival, departure)
-    arr = []
+  def average
+    sum = 0
+    length = 1
     self.bookings.each do |booking|
-      arr << booking.date_of_arrival.between?(arrival, departure)
-      arr << booking.date_of_departure.between?(arrival, departure)
+      booking.reviews.each do |review|
+        sum += review.rating
+        length += 1
+      end
     end
-    arr.include?(true)
+    (sum / length.to_f).round(2)
   end
 end
