@@ -1,0 +1,50 @@
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  flex-grow: 1;
+  padding-top: 25px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.card-review {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1px;
+  text-decoration: none!important;
+  color: black;
+}
+
+
+.card-review img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.card-user-infos {
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px;
+  align-items: center;
+
+  p {
+    margin-top: 12px;
+    padding-left: 12px;
+  }
+
+  .fas {
+    color: yellow;
+  }
+}
+
+.card-review-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  text-align: justify;
+  text-justify: inter-word;
+}
