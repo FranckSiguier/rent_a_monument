@@ -10,7 +10,7 @@ class Monument < ApplicationRecord
 
   def average
     sum = 0
-    length = 1
+    length = self.bookings.empty? ? 1 : 0
     self.bookings.each do |booking|
       booking.reviews.each do |review|
         sum += review.rating
