@@ -1,0 +1,69 @@
+.monument {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.monument-infos {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 1px;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  p {
+    margin-top: 12px;
+    padding-left: 25px;
+  }
+
+   .fas {
+    color: yellow;
+  }
+
+  img {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+  }
+}
+
+.monument-photos {
+
+  width: 55%;
+
+  img {
+    height: 700px;
+  }
+  p {
+    padding-top: 25px;
+  }
+}
+
+// .card-user-infos {
+//   display: flex;
+//   justify-content: flex-start;
+//   padding: 12px;
+//   align-items: center;
+
+//   p {
+//     margin-top: 12px;
+//     padding-left: 12px;
+//   }
+
+//   .fas {
+//     color: yellow;
+//   }
+// }
+
+// .card-review-infos {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 12px;
+//   text-align: justify;
+//   text-justify: inter-word;
+// }

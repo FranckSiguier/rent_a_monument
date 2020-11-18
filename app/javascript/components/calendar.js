@@ -10,6 +10,7 @@ const dynamicCalendar = () => {
   const monumentBookedDates = JSON.parse(calendarForm.dataset.dates)
 
   flatpickr(calendar, {
+    mode: 'range',
     minDate: "today",
     disable: monumentBookedDates
   })

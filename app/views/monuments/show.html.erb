@@ -1,16 +1,23 @@
 <div class="container">
-  <h1><%= @monument.name %></h1>
-  <% if @monument.photos.attached? %>
-  <% @monument.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill , class: "text-center"%>
-    <% end %>
-  <% end %>
-  <p><%= @monument.description %></p>
+  <div class="monument">
+      <h1><%= @monument.name %></h1>
+    <div class="monument-infos">
+      <p><%= @monument.average_rating %> <i class="fas fa-star"></i></p>
+      <p><%= @monument.user.first_name %></p>
+      <p><%= cl_image_tag @monument.user.photo.key %></p>
+    </div>
+    <%= render 'shared/monument_show', monument: @monument %>
+      <p><%= @monument.description %></p>
+  </div>
 </div>
+
 
 <div class="container">
   <%= render 'form_booking', monument: @monument %>
 </div>
+
+
+
 
 <div class="container">
   <div class="reviews">
