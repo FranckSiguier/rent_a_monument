@@ -29,10 +29,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import dynamicCalendar from '../components/calendar'
 import { initMapbox } from '../components/init_mapbox';
+import { initAutocomplete } from '../components/autocompleteAddress';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   dynamicCalendar();
   initMapbox();
+  initAutocomplete();
 });
