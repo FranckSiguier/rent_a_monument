@@ -2,6 +2,7 @@
   height: 81.5vh;
   .review-form {
     margin-top: 50px;
+    margin-bottom: 50px;
     padding: 50px;
     background-color: white;
     opacity: 0.8;
@@ -17,5 +18,8 @@
       cursor: pointer;
     }
   }
+}
+.sign-container {
+  height: 120vh;
 }
 
