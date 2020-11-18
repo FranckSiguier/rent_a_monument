@@ -67,3 +67,4 @@ gem 'cloudinary'
 gem 'amazing_print'
 
 gem "pundit", "~> 2.1"
+gem 'date'
