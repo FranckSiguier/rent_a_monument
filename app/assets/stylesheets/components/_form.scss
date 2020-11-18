@@ -1,0 +1,21 @@
+.card-form {
+  height: 81.5vh;
+  .review-form {
+    margin-top: 50px;
+    padding: 50px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+    -webkit-transition: padding 0.1s ease-out;
+    -moz-transition: padding 0.1s ease-out;
+    -o-transition: padding 0.1s ease-out;
+    transition: padding 0.1s ease-out;
+    &:hover {
+      padding: 55px;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+

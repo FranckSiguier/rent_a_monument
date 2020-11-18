@@ -7,6 +7,7 @@ class MonumentsController < ApplicationController
   end
 
   def show
+    @dates = set_booked_dates
     @review = Review.new
     @booking = Booking.new
   end
@@ -45,9 +46,18 @@ class MonumentsController < ApplicationController
     authorize @monument
   end
 
+  def set_booked_dates
+    @dates = []
+    @monument.bookings.each do |booking|
+      @dates << {
+        from: booking.date_of_arrival,
+        to: booking.date_of_departure
+      }
+    end
+    @dates.to_json
+  end
+
   def monument_params
-
     params.require(:monument).permit(:name, :description, :price_per_night, photos: [])
-
   end
 end

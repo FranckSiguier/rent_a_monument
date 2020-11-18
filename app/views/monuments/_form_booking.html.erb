@@ -1,8 +1,7 @@
-<div class="form">
+<div class="form" id="calendar-form" data-dates="<%= @dates %>">
   <h3>Add a booking</h3>
   <%= simple_form_for [ @monument, @booking ] do |f| %>
-    <%= f.input :date_of_arrival, as: :string %>
-    <%= f.input :duration %>
+    <%= f.input :date_of_arrival, as: :string, label: 'Book your date ! ' %>
     <%= f.submit "Submit booking",  class: "btn btn-primary" %>
   <% end %>
 </div>
