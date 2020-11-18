@@ -114,6 +114,14 @@ booking3.save!
 review1 = Review.new(rating: 4, title: "Super!", content: "J'ai passé un super bon moment")
 review2 = Review.new(rating: 5, title: "Jai ADORE!", content: "Cétait vraiment génial, à réserver sans hésiter!")
 review3 = Review.new(rating: 1, title: "NUL!", content: "J'ai pas du tout kiffé")
+review4 = Review.new(rating: 4, title: "Super!", content: "Notre séjour à été plus que parfait, endroit paradisiaque et qui vaut le coup d'œil. Christophe nous a parfaitement accueilli et les petits attentions ne manquaient pas. Merci pour ce week-end parfait")
+review5 = Review.new(rating: 4, title: "Great", content: "Une belle cabane confortable, joliment décorée avec tout l équipement nécessaire!! Un accueil chaleureux, un petit déjeuner complet avec de bons produits...bref un endroit au calme où les petits comme les grands se sont régalés!!")
+review6 = Review.new(rating: 4, title: "Amazing", content: "Nous avons passé un merveilleux sejours chez Christophe, ce fût une atmosphère calme et apaisante qui donne un aspect feerique une foiss immergés dans le bain nordique ou blottis sous un plaid pres du feux ! Je les recommande vivement !")
+review7 = Review.new(rating: 4, title: "Waouh", content: "Endroit unique, accueil chaleureux et nombreuses petites attentions qui font un séjour parfait ! La cabane du beau vallon est absolument à visiter !")
+review8 = Review.new(rating: 4, title: "Trop top", content: "Magnifique, Magique, Fantastique,... Tout était parfait !")
+review9 = Review.new(rating: 4, title: "J'ai kiffé", content: "Nous avons passé une nuit magique dans cette cabane pleine de charme. Christophe est un hôte très attentionné qui a le soucis du détail. Nous recommandons cette expérience sans hésiter !")
+review10 = Review.new(rating: 4, title: "Je recommande", content: "Nous avons passé un séjour enchanté et hors du temps dans la cabane de Christophe et Sophie, tout était parfait.")
+
 
 review1.user = user2
 review1.booking = booking2
@@ -126,5 +134,38 @@ review2.save!
 review3.user = user2
 review3.booking = booking1
 review3.save!
+
+review4.user = user2
+review4.booking = booking2
+review4.save!
+
+review5.user = user3
+review5.booking = booking2
+review5.save!
+
+review6.user = user1
+review6.booking = booking2
+review6.save!
+
+review7.user = user4
+review7.booking = booking2
+review7.save!
+
+review1.user = user2
+review1.booking = booking2
+review1.save!
+
+review8.user = user2
+review8.booking = booking2
+review8.save!
+
+review9.user = user3
+review9.booking = booking2
+review9.save!
+
+review10.user = user1
+review10.booking = booking2
+review10.save!
+
 
 puts "Creating done!"

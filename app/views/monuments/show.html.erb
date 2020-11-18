@@ -12,3 +12,27 @@
   <%= render 'form_booking', monument: @monument %>
 </div>
 
+<div class="container">
+  <div class="reviews">
+   <% @monument.bookings.each do |booking| %>
+   <% booking.reviews.each do |review| %>
+   <div class="card-review">
+      <div class="card-user-infos">
+      <%= cl_image_tag booking.user.photo.key %>
+      <p><%= review.rating %> <i class="fas fa-star"></i></p>
+      <p><%= booking.user.first_name %></p>
+      <% d = Date.parse(review.created_at.to_s) %>
+      <p><%= d.strftime('%d %b %Y') %></p>
+      </div>
+      <div class="card-review-infos">
+      <p><%=  review.title %></p>
+      <p><%= review.content %></p>
+    </div>
+   </div>
+   <% end %>
+   <% end %>
+   </div>
+</div>
+
+
+
