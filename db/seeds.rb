@@ -40,12 +40,12 @@ user2.save!
 user3.save!
 user4.save!
 
-monument1 = Monument.new(name: "Les Jardins Suspendus", price_per_night: 7, description: "Les jardins suspendus de Babylone, c'est vraiment un chouette potager", average_rating: 5)
-monument2 = Monument.new(name: "Le Taj Mahal", price_per_night: 10, description: "Le Taj Mahal, petit monument sympatique", average_rating: 4)
-monument3 = Monument.new(name: "Chichen Itza", price_per_night: 8, description: "La plus chouette des pyramides!", average_rating: 4)
-monument4 = Monument.new(name: "Petra", price_per_night: 6, description: "Le desert, c'est super!", average_rating: 5)
-monument5 = Monument.new(name: "Machu Pichu", price_per_night: 9, description: "La montagne, ça vous gagne!", average_rating: 3)
-monument6 = Monument.new(name: "Colisée", price_per_night: 5, description: "En état de ruine depuis la dernière soirée", average_rating: 2)
+monument1 = Monument.new(address: 'Ridge Rd, Simla Nagar, Malabar Hill, Mumbai, Maharashtra 400006, Inde', name: "Les Jardins Suspendus", price_per_night: 7, description: "Les jardins suspendus de Babylone, c'est vraiment un chouette potager", average_rating: 5)
+monument2 = Monument.new(address: 'Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, Inde', name: "Le Taj Mahal", price_per_night: 10, description: "Le Taj Mahal, petit monument sympatique", average_rating: 4)
+monument3 = Monument.new(address: 'Carr. Costera del Golfo 5009, Yucatán, Mexique', name: "Chichen Itza", price_per_night: 8, description: "La plus chouette des pyramides!", average_rating: 4)
+monument4 = Monument.new(address: 'Main street, Wadi Musa Down Town Wadi Musa, Jordanie', name: "Petra", price_per_night: 6, description: "Le desert, c'est super!", average_rating: 5)
+monument5 = Monument.new(address: '08680, Pérou', name: "Machu Pichu", price_per_night: 9, description: "La montagne, ça vous gagne!", average_rating: 3)
+monument6 = Monument.new(address: 'Piazza del Colosseo, 1, 00184 Roma RM, Italie', name: "Colisée", price_per_night: 5, description: "En état de ruine depuis la dernière soirée", average_rating: 2)
 
 
 monument1.photos.attach(io: URI.open(monument_images[0]), filename: 'monument.jpg', content_type: 'image/jpg')

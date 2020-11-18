@@ -68,3 +68,5 @@ gem 'amazing_print'
 
 gem "pundit", "~> 2.1"
 gem 'date'
+
+gem "geocoder", "~> 1.6"
