@@ -4,6 +4,14 @@ class MonumentsController < ApplicationController
 
   def index
     @monuments = policy_scope(Monument).order(created_at: :desc)
+
+    @markers = @monuments.geocoded.map do |monument|
+      {
+        lat: monument.latitude,
+        lng: monument.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { monument: monument })
+      }
+    end
   end
 
   def show

@@ -5,6 +5,9 @@ class Monument < ApplicationRecord
   validates_presence_of :name, :description, :price_per_night
   validates :name, uniqueness: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def booked?(arrival, departure)
     arr = []
     self.bookings.each do |booking|
