@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :monuments, only: [:index, :show] do
     resources :bookings, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :users, only: :show do
-    resources :reviews, only: [:create]
     resources :monuments, only:[:new, :create, :edit, :update]
   end
 
