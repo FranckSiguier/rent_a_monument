@@ -4036,6 +4036,11 @@ jest-worker@^25.4.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
+jquery-popup-overlay@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/jquery-popup-overlay/-/jquery-popup-overlay-2.1.5.tgz#0211b9a56e3814f0ced1aac9240fd55752910d88"
+  integrity sha512-QRSV71pRpyG/F5QAAUWGJ1aGg02w9NQWWF+sCxnAyq2S/smGC0Ay5gdgNMoyOdCGTgrEaP3/AIr6YOFGSh/Glw==
+
 jquery@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
