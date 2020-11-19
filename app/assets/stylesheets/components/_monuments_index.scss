@@ -1,3 +1,22 @@
+@media (max-width: 1261px) {
+.content {
+    width: 1045px;
+}
+}
+
+
+@media (max-width: 1025px) {
+.content {
+    width: 1500px;
+}
+}
+
+@media (max-width: 820px) {
+.content {
+    width: 1500px;
+}
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
