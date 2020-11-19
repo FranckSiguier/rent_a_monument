@@ -1,5 +1,6 @@
 <div class="form" id="calendar-form" data-dates="<%= @dates %>">
-  <h3>Book your date !</h3>
+  <h3>Book your date</h3>
+  <p>(choose one date of arrival and one of departure)</p>
   <%= simple_form_for [ @monument, @booking ] do |f| %>
     <%= f.input :date_of_arrival, as: :string, label: false, placeholder: 'Choose your date' %>
     <%= f.submit "Submit booking",  class: 'btn-ghost btn-lg' %>

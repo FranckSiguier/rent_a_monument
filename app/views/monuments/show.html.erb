@@ -5,7 +5,7 @@
         <div class="monument-infos">
           <p><%= cl_image_tag @monument.user.photo.key %></p>
           <p><%= @monument.average_rating %> <i class="fas fa-star"></i></p>
-          <p><%= @monument.user.first_name %></p>
+          <p>Hôte : <%= @monument.user.first_name %></p>
         </div>
         <%= render 'shared/monument_show', monument: @monument %>
       </div>
@@ -23,6 +23,16 @@
 </div>
 
 <div class="container">
+  <% if @monument.bookings.exists? == false%>
+     <h4>Aucun avis pour le moment...</h4>
+  <% end %>
+ <% @monument.bookings.each do |booking| %>
+  <% if booking.reviews.exists? %>
+    <h4>Avis(<%= booking.reviews.length %>)</h4>
+  <% else %>
+    <h4>Aucun avis pour le moment...</h4>
+  <% end %>
+  <% end %>
   <div class="reviews">
    <% @monument.bookings.each do |booking| %>
    <% booking.reviews.each do |review| %>
@@ -30,12 +40,11 @@
       <div class="card-user-infos">
       <%= cl_image_tag booking.user.photo.key %>
       <p><%= review.rating %> <i class="fas fa-star"></i></p>
-      <p><%= booking.user.first_name %></p>
-      <% d = Date.parse(review.created_at.to_s) %>
-      <p><%= d.strftime('%d %b %Y') %></p>
+      <p id="review-title"><%= review.title %></p>
       </div>
       <div class="card-review-infos">
-      <p><%= review.title %></p>
+      <% d = Date.parse(review.created_at.to_s) %>
+      <p id="user-name-date"><%= booking.user.first_name %> , <%= d.strftime('%d %b %Y') %></p>
       <p><%= review.content %></p>
     </div>
    </div>

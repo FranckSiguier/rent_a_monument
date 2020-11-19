@@ -24,7 +24,7 @@
 
 @media (min-width: 1200px) {
 .container {
-    max-width: 1400px;
+    max-width: 1500px;
 }
 }
 
@@ -46,4 +46,9 @@
     font-weight: 50;
     font-family: 'Poppins', sans-serif;
   }
+}
+
+h4 {
+  text-align: left;
+  padding-top: 20px;
 }
