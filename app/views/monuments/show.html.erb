@@ -14,15 +14,13 @@
     <p id="description"> <%= @monument.description %></p>
     <div class="booking-price">
     <p>Prix (taxes et frais compris) :  </p>
-    <p><%= @monument.price_per_night %> M </p>
+    <p id="price_per_night" data-price="<%= @monument.price_per_night %>"></p>
+    <p id="total_price"><%= @monument.price_per_night %> M / day</p>
     </div>
   </div>
 
   </div>
 </div>
-
-
-
 
 <div class="container">
   <div class="reviews">
