@@ -11,7 +11,11 @@
       </div>
   <div class="booking">
     <%= render 'form_booking', monument: @monument %>
-    <p><%= @monument.description %></p>
+    <p id="description"> <%= @monument.description %></p>
+    <div class="booking-price">
+    <p>Prix (taxes et frais compris) :  </p>
+    <p><%= @monument.price_per_night %> M </p>
+    </div>
   </div>
 
   </div>
