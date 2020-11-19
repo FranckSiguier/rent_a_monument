@@ -30,6 +30,7 @@ import "bootstrap";
 import dynamicCalendar from '../components/calendar'
 import { initMapbox } from '../components/init_mapbox';
 import { initAutocomplete } from '../components/autocompleteAddress';
+import priceCalcul from '../components/price'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   dynamicCalendar();
   initMapbox();
   initAutocomplete();
+  priceCalcul();
 });
