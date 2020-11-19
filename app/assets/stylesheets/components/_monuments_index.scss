@@ -1,9 +1,13 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: 16px;
   flex-grow: 1;
-  padding-top: 25px;
+  padding: 16px;
+}
+
+.content {
+  display: flex;
 }
 
 .card-monument {
@@ -49,4 +53,10 @@ a:hover {
   .fas {
     color: yellow;
   }
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }

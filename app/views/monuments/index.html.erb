@@ -4,7 +4,7 @@
     <h5>Une liste des plus beaux endroits de la planète séléctionnés pour vous...</h5>
   </div>
 </div>
-<div class="container">
+  <div class="content">
     <div class="cards">
       <% @monuments.each do |monument| %>
         <%= link_to monument_path(monument), class: 'card-monument' do %>
@@ -18,11 +18,9 @@
         <% end %>
       <% end %>
     </div>
-  </div>
+      <div id="map"
+           style="width: 5000px; height: 100vh;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
 
-<div class="container">
-  <div id="map"
-       style="width: 700px; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
