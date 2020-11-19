@@ -1,4 +1,14 @@
-.radio_buttons {
+.range {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-item: center;
+  .input {
+    margin-top: 3px;
+    flex-grow: 0.5;
+  }
 }
+
+.submit-rating {
+  margin-left: 35px;
+}
+

@@ -4,15 +4,38 @@
       <div class="review-form">
         <h3>Add a review</h3>
         <%= simple_form_for [@monument, @review] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :content %>
-          <div class="radio-buttons">
-            <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
+          <h5>Title</h5>
+          <%= f.input :title, label: false %>
+          <h5>Content</h5>
+          <%= f.input :content, label: false %>
+          <h5> Rating </h5>
+          <div class="range">
+            <div class="input">
+              <%= f.input :rating,
+              collection: 1..5,
+              as: :range,
+              type: "range",
+              label: false,
+              class: "custom-range",
+              input_html: {
+                min: "0",
+                max: "5",
+                onchange: "
+                const label = document.getElementById('value')
+                const val = document.getElementById('textInput').value
+                label.innerHTML = `${val}`
+                ",
+                id: "textInput"} %>
+            </div>
+            <div class="value-input">
+              <p id="value">3</p>
+            </div>
           </div>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
+          <%= f.submit "Submit review", class: "btn btn-primary submit-rating" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
 
