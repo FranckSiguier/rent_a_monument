@@ -5,7 +5,7 @@
         <div class="monument-infos">
           <p><%= cl_image_tag @monument.user.photo.key %></p>
           <p><%= @monument.average_rating %> <i class="fas fa-star"></i></p>
-          <p><%= @monument.user.first_name %></p>
+          <p>Hôte : <%= @monument.user.first_name %></p>
         </div>
         <%= render 'shared/monument_show', monument: @monument %>
       </div>
