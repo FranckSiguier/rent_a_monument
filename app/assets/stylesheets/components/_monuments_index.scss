@@ -4,10 +4,13 @@
   grid-gap: 16px;
   flex-grow: 1;
   padding: 16px;
+  width: 400%;
 }
 
 .content {
   display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .card-monument {
@@ -48,10 +51,10 @@ a:hover {
 .card-info {
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  padding-top: 8px;
 
   .fas {
-    color: yellow;
+    color: #F2A918;
   }
 }
 
@@ -59,4 +62,6 @@ a:hover {
   height: 100vh;
   position: sticky;
   top: 0;
+  margin-bottom: 40px;
+  margin-top: 16px;
 }
