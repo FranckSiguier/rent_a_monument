@@ -8,13 +8,22 @@ class User < ApplicationRecord
   has_many :monuments, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  def full_name
-    "#{first_name.capitalize} #{last_name.capitalize}"
-  end
-
-  validates :first_name, :last_name, :email, :password, presence: true
+  validates :first_name, :last_name, :email, presence: true
+  validates :password, presence: true,
+                       if: :password
   # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :email, uniqueness: true
   validates :first_name, uniqueness: { scope: :last_name }
 
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
+  def profil
+    if self.photo.attached?
+      self.photo.key
+    else
+      'wkaobef08zf8h8zkabi9z2fvthuj'
+    end
+  end
 end
