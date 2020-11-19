@@ -1,7 +1,7 @@
 .reviews {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: 50px;
   flex-grow: 1;
   padding-top: 25px;
   border-top: 1px solid #DDDDDD;
@@ -39,12 +39,23 @@
   .fas {
     color: yellow;
   }
+
+  #review-title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
 }
 
 .card-review-infos {
   display: flex;
   flex-direction: column;
-  padding: 12px;
+  padding: 8px;
   text-align: justify;
   text-justify: inter-word;
+
+  #user-name-date {
+    font-style: italic;
+    font-size: 14px;
+  }
 }

@@ -42,12 +42,11 @@
       <div class="card-user-infos">
       <%= cl_image_tag booking.user.photo.key %>
       <p><%= review.rating %> <i class="fas fa-star"></i></p>
-      <p><%= booking.user.first_name %></p>
-      <p><%= review.title %></p>
+      <p id="review-title"><%= review.title %></p>
       </div>
       <div class="card-review-infos">
       <% d = Date.parse(review.created_at.to_s) %>
-      <p><%= d.strftime('%d %b %Y') %></p>
+      <p id="user-name-date"><%= booking.user.first_name %> , <%= d.strftime('%d %b %Y') %></p>
       <p><%= review.content %></p>
     </div>
    </div>
