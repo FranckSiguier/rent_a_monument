@@ -1,26 +1,25 @@
-<div class="container">
-  <div class="index-text">
-    <h1>Just choose...</h1>
-    <h5>Une liste des plus beaux endroits de la planète séléctionnés pour vous...</h5>
-  </div>
+<div class="index-text">
+  <h1>Just choose...</h1>
+  <h5>Une liste des plus beaux endroits de la planète séléctionnés pour vous...</h5>
 </div>
-  <div class="content">
-    <div class="cards">
-      <% @monuments.each do |monument| %>
-        <%= link_to monument_path(monument), class: 'card-monument' do %>
-            <div class="card-img">
-              <%= image_tag cl_image_path monument.photos[0].key %>
-            </div>
-            <div class="card-info">
-              <p><%= monument.name %></p>
-              <p><%= monument.average %> <i class="fas fa-star"></i></p>
-            </div>
-        <% end %>
+<div class="content">
+  <div class="cards">
+    <% @monuments.each do |monument| %>
+      <%= link_to monument_path(monument), class: 'card-monument' do %>
+          <div class="card-img">
+            <%= image_tag cl_image_path monument.photos[0].key %>
+          </div>
+          <div class="card-info">
+            <p><%= monument.name %></p>
+            <p><%= monument.average %> <i class="fas fa-star"></i></p>
+          </div>
       <% end %>
-    </div>
-      <div id="map"
-           style="width: 5000px; height: 100vh;"
-           data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
+    <% end %>
+  </div>
+    <div id="map"
+         style="width: 5000px; height: 100vh;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+
 
