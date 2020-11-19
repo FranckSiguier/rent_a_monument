@@ -1,0 +1,15 @@
+.edit {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  bottom: 235px;
+  left: 58px;
+  z-index: _10px;
+  opacity: 0.4;
+  -webkit-text-stroke: 1px grey;
+  &:hover {
+    opacity: 1;
+    color:white;
+  }
+}
