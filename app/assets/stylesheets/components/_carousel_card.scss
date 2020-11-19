@@ -11,6 +11,8 @@
     }
   }
   .info {
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     justify-content: space-between;
     align-item: center;
@@ -57,5 +59,8 @@
 .carousel-item img {
   height: 200px;
   width: 100%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
