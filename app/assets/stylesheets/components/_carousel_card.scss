@@ -1,20 +1,37 @@
 .card-container{
-  display: flex;
-  justify-content: space-around;
-  align-item: center;
-  margin-top: 30px;
-  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 20px;
+  a {
+    text-decoration: none;
+    color: grey;
+    &:hover {
+      color: #3e3e3e;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-item: center;
+    p {
+      margin-top: 3px;
+      font-size: 13px;
+      .fas {
+        font-size: 16px;
+        color: #F2A918;
+      }
+    }
+  }
 }
 
 .card {
-  margin-left: 20px;
-  padding: 30px;
-  width: 35%;
+  padding: 20px;
   img {
     height: 200px;
   }
   h4 {
-    margin-top: 10px;
+    padding: 0;
   }
   .avatar, p, h5 {
     margin-left: 10px;

@@ -1,0 +1,15 @@
+  <div class="info-resa">
+      <h4>Info reservations :</h4>
+      <% @monument.bookings.each do |booking| %>
+        <div class=" info d-flex justify-content-space-between">
+          <div>
+            <%= cl_image_tag booking.user.profil, class: 'avatar' %>
+          </div>
+          <div class="d-flex justify-content-space-between">
+            <h5 class="resa"><%= booking.user.full_name %></h5>
+            <p  class="resa"><small>arrival: <%= booking.date_of_arrival %></small> </p>
+            <p  class="resa"><small>departure: <%= booking.date_of_departure %></small> </p>
+          </div>
+        </div>
+      <% end %>
+  </div>

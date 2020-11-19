@@ -2,9 +2,9 @@
 
   <div class="col-s6">
     <div class="container" style="margin-top: 10px;">
-      <%= cl_image_tag current_user.photo.key, class: 'avatar-large p-10' %>
+      <%= cl_image_tag current_user.profil, class: 'avatar-large p-10' %>
       <h1> <%= current_user.full_name %> </h1>
-      <h3>#average_rating</h3>
+      <%= link_to 'Edit profil', edit_user_path(current_user)  %>
     </div>
   </div>
 </div>

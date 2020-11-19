@@ -1,5 +1,8 @@
 <div class="card">
-  <h4> <%= monument.name.capitalize %> </h4>
+  <div class="info">
+    <h4> <%= link_to monument.name.capitalize, monument_path(monument) %> </h4>
+    <p> <%= monument.average %> <i class="fas fa-star"></i> </p>
+  </div>
   <div id="carousel<%= monument.name.split(' ').join  %>" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <% monument.photos.each_with_index do |photo, i| %>
@@ -23,17 +26,15 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-      <h4>Reservations: </h4>
-      <div class="booking-info">
+<!--       <div class="booking-info">
         <% monument.bookings.each do |booking| %>
           <div class="booking-p d-flex justify-content-center">
-            <%= cl_image_tag booking.user.photo.key, class: 'avatar' %>
             <h5><%= booking.user.full_name %></h5>
             <p>arrival: <%= booking.date_of_arrival %> </p>
             <p>departure: <%= booking.date_of_departure %> </p>
           </div>
         <% end %>
-      </div>
+      </div> -->
 </div>
 
 
