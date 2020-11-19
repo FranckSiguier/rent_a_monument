@@ -6,7 +6,9 @@
         <%= simple_form_for [@monument, @review] do |f| %>
           <%= f.input :title %>
           <%= f.input :content %>
-          <%= f.input :rating, collection: 1..5 %>
+          <div class="radio-buttons">
+            <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
+          </div>
           <%= f.submit "Submit review", class: "btn btn-primary" %>
         <% end %>
       </div>
