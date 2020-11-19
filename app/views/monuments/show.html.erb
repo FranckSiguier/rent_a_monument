@@ -10,34 +10,36 @@
         </div>
         <%= render 'shared/monument_show', monument: @monument %>
       </div>
+
         <% if current_user.monuments.include?(@monument) %>
           <%= render 'current_user_monument_show' %>
         <% else %>
-          <div class="booking">
-            <%= render 'form_booking', monument: @monument %>
-            <p id="description"> <%= @monument.description %></p>
-            <div class="booking-price">
-              <p>Prix (taxes et frais compris) :  </p>
+            <div class="booking">
+              <%= render 'form_booking', monument: @monument %>
+              <p id="description"> <%= @monument.description %></p>
+              <div class="booking-price">
+              <p>Prix:  </p>
               <p id="price_per_night" data-price="<%= @monument.price_per_night %>"></p>
-              <p id="total_price"><%= @monument.price_per_night %> M / day</p>
+              <p id="total_price"><%= @monument.price_per_night %> Million euros per day</p>
+              </div>
             </div>
-          </div>
         <% end %>
 
 
-  </div>
-</div>
+
 
 <div class="container">
   <% if @monument.bookings.exists? == false%>
      <h4>Aucun avis pour le moment...</h4>
   <% end %>
+  <% count = 0 %>
  <% @monument.bookings.each do |booking| %>
-  <% if booking.reviews.exists? %>
-    <h4>Avis(<%= booking.reviews.length %>)</h4>
+  <% count += booking.reviews.length %>
+  <% end %>
+  <% if @monument.bookings.exists? %>
+    <h4>Avis(<%= count %>)</h4>
   <% else %>
     <h4>Aucun avis pour le moment...</h4>
-  <% end %>
   <% end %>
   <div class="reviews">
    <% @monument.bookings.each do |booking| %>

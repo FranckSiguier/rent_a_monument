@@ -19,9 +19,9 @@ const priceCalcul = () => {
     const duration = Math.floor((date2 - date1) / (1000*60*60*24))
 
       if ( !isNaN( duration ) ) {
-        totalPrice.innerHTML = `${changeCost(pricePerNight.dataset.price, duration)} Million euros`;
+        totalPrice.innerHTML = `${changeCost(pricePerNight.dataset.price, duration)} Million euros total`;
       } else {
-        totalPrice.innerHTML = `${pricePerNight.dataset.price} M / day`
+        totalPrice.innerHTML = `${pricePerNight.dataset.price} Million euros per day`
       }
   })
 }

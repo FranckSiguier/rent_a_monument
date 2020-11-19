@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Just A Sample...</h1>
+  <div class="content-home">
+    <div class="cards-home">
+      <% @monuments.sample(3).each do |monument| %>
+        <%= link_to monument_path(monument), class: 'card-monument' do %>
+            <div class="card-img">
+              <%= image_tag cl_image_path monument.photos[0].key %>
+            </div>
+            <div class="card-info">
+              <p><%= monument.name %></p>
+              <p><%= monument.average %> <i class="fas fa-star"></i></p>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
