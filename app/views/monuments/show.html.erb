@@ -13,9 +13,9 @@
     <%= render 'form_booking', monument: @monument %>
     <p id="description"> <%= @monument.description %></p>
     <div class="booking-price">
-    <p>Prix (taxes et frais compris) :  </p>
+    <p>Prix:  </p>
     <p id="price_per_night" data-price="<%= @monument.price_per_night %>"></p>
-    <p id="total_price"><%= @monument.price_per_night %> M / day</p>
+    <p id="total_price"><%= @monument.price_per_night %> Million euros per day</p>
     </div>
   </div>
 
