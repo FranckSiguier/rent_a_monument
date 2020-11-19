@@ -11,7 +11,7 @@
         <%= render 'shared/monument_show', monument: @monument %>
       </div>
 
-        <% if current_user.monuments.include?(@monument) %>
+        <% if user_signed_in? && current_user.monuments.include?(@monument) %>
           <%= render 'current_user_monument_show' %>
         <% else %>
             <div class="booking">
