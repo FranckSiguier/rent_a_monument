@@ -1,4 +1,14 @@
-<%= simple_form_for current_user do |f| %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="login-container">
+  <div class="card-form d-flex justify-content-center">
+    <div class="rv-p">
+      <div class="review-form">
+
+        <%= simple_form_for current_user do |f| %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
