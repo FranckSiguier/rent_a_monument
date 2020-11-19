@@ -26,12 +26,14 @@
   <% if @monument.bookings.exists? == false%>
      <h4>Aucun avis pour le moment...</h4>
   <% end %>
+  <% count = 0 %>
  <% @monument.bookings.each do |booking| %>
-  <% if booking.reviews.exists? %>
-    <h4>Avis(<%= booking.reviews.length %>)</h4>
+  <% count += booking.reviews.length %>
+  <% end %>
+  <% if @monument.bookings.exists? %>
+    <h4>Avis(<%= count %>)</h4>
   <% else %>
     <h4>Aucun avis pour le moment...</h4>
-  <% end %>
   <% end %>
   <div class="reviews">
    <% @monument.bookings.each do |booking| %>
