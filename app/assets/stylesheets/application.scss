@@ -16,7 +16,7 @@
 @import "pages/index";
 
 
-@media (min-width: 576px) {
+@media (min-width: 250px) {
   .container {
       max-width: 700px !important;
   }
@@ -37,6 +37,10 @@
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
+
+}
+
+@media (min-width: 576px) {
 
 }
 
