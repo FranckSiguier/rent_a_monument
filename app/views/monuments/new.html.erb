@@ -1,11 +1,19 @@
-<div class="container">
-  <h1>New Monument</h1>
+<div class="container" style="height: 130vh">
+  <div class="login-container">
+    <div class="card-form d-flex justify-content-center">
+      <div class="rv-p">
+        <div class="review-form">
+          <h1>New Monument</h1>
 
-  <%= render 'form', monument: @monument %>
+            <%= render 'form', monument: @monument %>
 
-  <hr>
+            <hr>
 
-  <%= link_to 'Back', monuments_path, class: "btn btn-flat" %>
+            <%= link_to 'Back', monuments_path, class: "btn btn-dark" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

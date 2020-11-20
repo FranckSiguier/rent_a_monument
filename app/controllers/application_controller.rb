@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :photo])
   end
 
+  def after_sign_in_path_for(resources)
+    monuments_path # your path
+  end
+
   private
 
   def skip_pundit?

@@ -70,3 +70,5 @@ gem "pundit", "~> 2.1"
 gem 'date'
 
 gem "geocoder", "~> 1.6"
+
+gem "turbolinks_render", "~> 0.9.20"
