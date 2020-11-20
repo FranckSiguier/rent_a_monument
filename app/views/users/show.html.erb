@@ -27,7 +27,7 @@
       </thead>
 
       <tbody>
-        <% @bookings.each do |booking| %>
+        <% @bookings.reverse.each do |booking| %>
           <tr>
             <td><%= booking.monument.name %></td>
             <td><%= booking.date_of_arrival %></td>
