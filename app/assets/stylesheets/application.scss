@@ -33,6 +33,10 @@
   .card-container {
     grid-template-columns: 1fr;
   }
+  .cards-home {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
 
 }
 
@@ -64,6 +68,10 @@
     grid-template-columns: 1fr;
   }
 
+  .cards-home {
+    grid-gap: 40px;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -83,6 +91,10 @@
   }
 
   .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cards-home {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
