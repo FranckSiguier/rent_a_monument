@@ -30,11 +30,17 @@
   .cards {
     grid-template-columns: 1fr;
   }
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 
 }
 
 @media (min-width: 768px) {
   .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card-container {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -76,6 +82,10 @@
     grid-template-columns: 1fr;
   }
 
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
 
 
@@ -101,6 +111,8 @@
   }
 
 }
+
+
 
 
 
