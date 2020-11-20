@@ -1,9 +1,0 @@
-<div class="form">
-    <h3>Add a review</h3>
-<%= simple_form_for [ @monument, @review ] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :rating, collection: 1..5 %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
-</div>

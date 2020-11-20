@@ -46,8 +46,14 @@
   border-radius: 10px;
   letter-spacing: 1.3px;
   box-shadow: 2px 2px 25px -7px #4c4c4c;
-  background-color: #1EDD88;
+  background-color: #a2de96;
   color: white;
   font-weight: 600;
 
+}
+
+.btn-outline-success:hover {
+  color: white;
+  background-color: #3ca59d;
+  border-color: #3ca59d;
 }
