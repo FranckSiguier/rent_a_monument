@@ -7,14 +7,14 @@
         <%= link_to icon('fas', 'edit'), edit_user_path(current_user), class: 'edit'  %>
       </div>
     </div>
-    <div class="col-xs-12.col-md-8" style="margin-top: 40px;margin-left: 110px;">
+    <div class="col-xs-12.col-md-8" style="margin-top: 40px;margin-left: 10px;">
   <% if @bookings.empty? %>
     <div style="height: 20vh;">
       <h2>Vous n'avez pas de réservations pour l'instant...</h2>
       <%= link_to 'Réservez un monument !', monuments_path, class: 'btn btn-primary'  %>
     </div>
   <% else %>
-    <h2 style="margin-right: 160px;">Mes reservations </h2>
+    <h2 class="text-left">Mes reservations :</h2>
     <table class="Bookings table" class="text-center">
       <thead>
         <tr>
@@ -48,7 +48,7 @@
 </div>
   </div>
 </div>
-<hr>
+<br>
 
   <% if current_user.monuments.empty? %>
     <div class="container-user-monument">
@@ -76,4 +76,3 @@
 <br>
 <br>
 
-<hr>
