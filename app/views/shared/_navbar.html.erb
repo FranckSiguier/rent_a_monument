@@ -6,9 +6,11 @@
           <%= image_tag "logo.png", width: "60" %>
         <% end %>
       </li>
-      <li style="margin-top: 5px; margin-left: 5px;">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link' %>
-      </li>
+      <% if user_signed_in? %>
+        <li style="margin-top: 5px; margin-left: 5px;">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% end %>
 
     </ul>
   </div>
