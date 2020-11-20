@@ -98,25 +98,47 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .monument-photos {
+
+
+  img {
+    height: 500px!important;
+  }
+}
+
+  .booking {
+    margin-top: 135px;
+  }
+
 }
 
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 1200px !important;
+    max-width: 1400px !important;
   }
 
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 
+  .monument-photos {
+
+
+  img {
+    height: 600px!important;
+  }
+}
+
+ .booking {
+    margin-top: 155px;
+  }
+
 }
 
 
 @media (min-width: 1600px) {
-  .container {
-    max-width: 1400px !important;
-  }
+
 
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
