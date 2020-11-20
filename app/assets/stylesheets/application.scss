@@ -25,10 +25,14 @@
 }
 
 @media (min-width: 1200px) {
-.container {
-    max-width: 1500px;
+  .container {
+      max-width: 1200px;
+  }
+
 }
-}
+
+
+
 
 .index-text {
   margin-left: 50px;
@@ -53,7 +57,7 @@
 h4 {
   font-family: 'Poppins', sans-serif;
   text-align: left;
-  padding-top: 20px;
+  padding-top: 25px;
 }
 
 h2 {
