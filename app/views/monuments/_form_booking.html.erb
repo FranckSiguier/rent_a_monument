@@ -3,6 +3,6 @@
   <p>(Choisissez votre date d'arrivée et votre date de départ)</p>
   <%= simple_form_for [ @monument, @booking ] do |f| %>
     <%= f.input :date_of_arrival, as: :string, label: false, placeholder: 'Choisissez les dates' %>
-    <%= f.submit "Réserver",  class: 'btn-ghost btn-lg' %>
+    <%= f.submit "Réserver",  class: 'btn-ghost btn-block' %>
   <% end %>
 </div>

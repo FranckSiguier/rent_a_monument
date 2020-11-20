@@ -11,7 +11,7 @@
   <% if @bookings.empty? %>
     <div style="height: 20vh;">
       <h2>Vous n'avez pas de booking pour l'instant...</h2>
-      <%= link_to 'Book a monument !', monuments_path, class: 'btn btn-primary'  %>
+      <%= link_to 'Réservez un monument !', monuments_path, class: 'btn btn-primary'  %>
     </div>
   <% else %>
     <h2 style="margin-right: 160px;">Mes reservations </h2>
@@ -19,9 +19,9 @@
       <thead>
         <tr>
           <th scope="col">Monument</th>
-          <th scope="col">Date of arrival</th>
-          <th scope="col">Date of departure</th>
-          <th scope="col">Duration of stay</th>
+          <th scope="col">Date de début</th>
+          <th scope="col">Date de départ</th>
+          <th scope="col">Durée du séjour</th>
           <th scope="col" colspan="4"></th>
         </tr>
       </thead>
@@ -36,7 +36,9 @@
             <td>
               <%= link_to 'Donne ton avis', new_monument_review_path(booking.monument.id), class: 'btn btn-outline-primary btn-sm'%>
               </td>
-            <td><%= link_to 'Annule la reservation', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
+            <% if Date.today < booking.date_of_arrival %>
+              <td><%= link_to 'Annule la reservation', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
@@ -51,13 +53,13 @@
 
   <% if current_user.monuments.empty? %>
 
-    <h2>You have no monuments for instance</h2>
-    <%= link_to 'Add A Monument', new_user_monument_path(current_user), class: 'btn btn-primary'  %>
+    <h2>Vous n'avez pas de monument pour l'instant ...</h2>
+    <%= link_to 'Ajouter un monument', new_user_monument_path(current_user), class: 'btn btn-primary'  %>
 
   <% else %>
 
-    <h2 class="text-left">Mes monuments </h2>
-    <%= link_to 'Add A Monument', new_user_monument_path(current_user), class: "btn btn-primary add-monument" %>
+    <h2 class="text-left">Mes monuments :</h2>
+    <%= link_to 'Ajouter un monument', new_user_monument_path(current_user), class: "btn btn-primary add-monument" %>
 
     <div class="card-container">
       <% current_user.monuments.each do |monument| %>
