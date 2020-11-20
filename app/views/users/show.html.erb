@@ -47,17 +47,17 @@
   </div>
 </div>
 <hr>
-<div class="container">
+<div class="container-user-monument">
 
   <% if current_user.monuments.empty? %>
 
-    <h2>You have no monuments for instance</h2>
-    <%= link_to 'Add A Monument', new_user_monument_path(current_user), class: 'btn btn-primary'  %>
+    <h2>Vous n'avez pas de monument pour l'instant</h2>
+    <%= link_to 'Ajouter un Monument', new_user_monument_path(current_user), class: 'btn btn-primary'  %>
 
   <% else %>
 
     <h2 class="text-left">Mes monuments </h2>
-    <%= link_to 'Add A Monument', new_user_monument_path(current_user), class: "btn btn-primary add-monument" %>
+    <%= link_to 'Ajouter un Monument', new_user_monument_path(current_user), class: "btn btn-primary add-monument" %>
 
     <div class="card-container">
       <% current_user.monuments.each do |monument| %>
