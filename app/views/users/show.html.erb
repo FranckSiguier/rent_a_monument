@@ -33,11 +33,13 @@
             <td><%= booking.date_of_arrival %></td>
             <td><%= booking.date_of_departure %></td>
             <td><%= booking.duration %></td>
+
+            <% if Date.today < booking.date_of_arrival %>
+              <td><%= link_to 'Annule la reservation', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
+            <% else %>
             <td>
               <%= link_to 'Donne ton avis', new_monument_review_path(booking.monument.id), class: 'btn btn-outline-primary btn-sm'%>
               </td>
-            <% if Date.today < booking.date_of_arrival %>
-              <td><%= link_to 'Annule la reservation', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
             <% end %>
           </tr>
         <% end %>
