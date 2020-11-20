@@ -31,11 +31,8 @@
 
 
 <div class="container">
-  <% if @monument.bookings.exists? == false%>
-     <h4>Aucun avis pour le moment...</h4>
-  <% end %>
   <% count = 0 %>
- <% @monument.bookings.each do |booking| %>
+  <% @monument.bookings.each do |booking| %>
   <% count += booking.reviews.length %>
   <% end %>
   <% if @monument.bookings.exists? %>
