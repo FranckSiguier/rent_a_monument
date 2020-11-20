@@ -10,8 +10,8 @@
             <%= f.error_notification %>
 
             <div class="form-inputs">
-              <%= f.input :first_name, label: false, placeholder: 'First name' %>
-              <%= f.input :last_name, label: false, placeholder: 'Last Name' %>
+              <%= f.input :first_name, label: false, placeholder: 'Prénom' %>
+              <%= f.input :last_name, label: false, placeholder: 'Nom' %>
 
               <%= f.input :email,
                           required: true,
@@ -23,19 +23,19 @@
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" },
                           label: false,
-                          placeholder: 'Password' %>
+                          placeholder: 'Mot de passe' %>
 
               <%= f.input :password_confirmation,
                           required: true,
                           input_html: { autocomplete: "new-password" },
                           label: false,
-                          placeholder: 'Confirm password' %>
+                          placeholder: 'Confirmer mot de passe' %>
 
               <%= f.input :photo, as: :file %>
             </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Sign up", class: 'btn-ghost btn-lg' %>
+              <%= f.button :submit, "S'inscrire", class: 'btn-ghost btn-lg' %>
             </div>
           <% end %>
         </div>

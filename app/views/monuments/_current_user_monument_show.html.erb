@@ -1,5 +1,9 @@
   <div class="info-resa">
-      <h4>Info reservations :</h4>
+    <% if @monument.bookings.empty? %>
+      <h4>Aucune réservations pour le moment</h4>
+    <% else %>
+      <h4>Réservations pour vos monument :</h4>
+    <% end %>
       <% @monument.bookings.each do |booking| %>
         <div class=" info d-flex justify-content-space-between">
           <div>
@@ -7,8 +11,8 @@
           </div>
           <div class="d-flex justify-content-space-between">
             <h5 class="resa"><%= booking.user.full_name %></h5>
-            <p  class="resa"><small>arrival: <%= booking.date_of_arrival %></small> </p>
-            <p  class="resa"><small>departure: <%= booking.date_of_departure %></small> </p>
+            <p  class="resa"><small>Arrivée : <%= booking.date_of_arrival %></small> </p>
+            <p  class="resa"><small>Départ : <%= booking.date_of_departure %></small> </p>
           </div>
         </div>
       <% end %>
