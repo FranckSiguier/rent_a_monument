@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding: 20px;
   a {
     text-decoration: none;
     color: grey;
@@ -52,7 +51,7 @@
 }
 
 .add-monument {
-  margin-top: 30px;
+  margin-top: -90px;
   margin-bottom: 10px;
 }
 
