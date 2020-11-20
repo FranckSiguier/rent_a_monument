@@ -54,7 +54,7 @@
     <div class="container-user-monument">
 
     <h2>Vous n'avez pas de monument pour l'instant ...</h2>
-
+    <%= link_to 'Ajouter un monument', new_user_monument_path(current_user), class: 'btn btn-primary' %>
     </div>
   <% else %>
     <div class="container">
