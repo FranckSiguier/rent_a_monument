@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-s6">
+    <div class="col-xs-12.col-md-8">
       <div class="container" style="margin-top: 40px;">
         <%= cl_image_tag current_user.profil, class: 'avatar avatar-large p-10' %>
         <h1> <%= current_user.full_name %> </h1>
         <%= link_to icon('fas', 'edit'), edit_user_path(current_user), class: 'edit'  %>
       </div>
     </div>
-    <div class="col-s6" style="margin-top: 40px;">
+    <div class="col-xs-12.col-md-8" style="margin-top: 40px;">
   <% if @bookings.empty? %>
     <div style="height: 20vh;">
       <h2>Vous n'avez pas de booking pour l'instant...</h2>
@@ -34,9 +34,9 @@
             <td><%= booking.date_of_departure %></td>
             <td><%= booking.duration %></td>
             <td>
-              <%= link_to 'Review this monument !', new_monument_review_path(booking.monument.id), class: 'btn btn-outline-primary btn-sm'%>
+              <%= link_to 'Donne ton avis', new_monument_review_path(booking.monument.id), class: 'btn btn-outline-primary btn-sm'%>
               </td>
-            <td><%= link_to 'Cancel this booking', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
+            <td><%= link_to 'Annule la reservation', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-small btn-sm' %></td>
           </tr>
         <% end %>
       </tbody>
