@@ -7,7 +7,7 @@
         <%= link_to icon('fas', 'edit'), edit_user_path(current_user), class: 'edit'  %>
       </div>
     </div>
-    <div class="col-xs-12.col-md-8" style="margin-top: 40px;">
+    <div class="col-xs-12.col-md-8" style="margin-top: 40px;margin-left: 110px;">
   <% if @bookings.empty? %>
     <div style="height: 20vh;">
       <h2>Vous n'avez pas de booking pour l'instant...</h2>
@@ -49,17 +49,17 @@
   </div>
 </div>
 <hr>
-<div class="container-user-monument">
 
   <% if current_user.monuments.empty? %>
+    <div class="container-user-monument">
 
     <h2>Vous n'avez pas de monument pour l'instant ...</h2>
-    <%= link_to 'Ajouter un monument', new_user_monument_path(current_user), class: 'btn btn-primary'  %>
 
+    </div>
   <% else %>
-
+    <div class="container">
     <h2 class="text-left">Mes monuments :</h2>
-    <%= link_to 'Ajouter un monument', new_user_monument_path(current_user), class: "btn btn-primary add-monument" %>
+
 
     <div class="card-container">
       <% current_user.monuments.each do |monument| %>
@@ -68,7 +68,14 @@
     </div>
 
 
+   <%= link_to 'Ajouter un monument', new_user_monument_path(current_user), class: 'btn btn-primary' %>
+  </div>
   <% end %>
-</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <hr>
