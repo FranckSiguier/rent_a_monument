@@ -1,9 +1,9 @@
 <div class="form">
-    <h3>Add a review</h3>
+    <h3>Donnez votre avis</h3>
 <%= simple_form_for [ @monument, @review ] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :rating, collection: 1..5 %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%= f.input :title, 'Ajouter un titre', placeholder:"Qu'est ce qui est le plus important à savoir ?" %>
+  <%= f.input :content, 'Commentaire', placeholder:"Qu'avez vous pensé de ce bien ?" %>
+  <%= f.input :rating, 'Note' collection: 1..5 %>
+  <%= f.submit "Envoyer", class: "btn btn-primary" %>
 <% end %>
 </div>

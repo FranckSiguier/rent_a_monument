@@ -2,13 +2,14 @@
   <div class="card-form d-flex justify-content-center">
     <div class="rv-p">
       <div class="review-form">
-        <h3>Add a review</h3>
+        <h3>Donnez votre avis</h3>
+        <hr>
         <%= simple_form_for [@monument, @review] do |f| %>
-          <h5>Title</h5>
-          <%= f.input :title, label: false %>
-          <h5>Content</h5>
-          <%= f.input :content, label: false %>
-          <h5> Rating </h5>
+          <h5>Ajouter un titre</h5>
+          <%= f.input :title, label:false , placeholder:"Le plus important" %>
+          <h5>Commentaire</h5>
+          <%= f.input :content, label: false, placeholder:"Qu'avez vous pensé de ce bien ?" %>
+          <h5> Note </h5>
           <div class="range">
             <div class="input">
               <%= f.input :rating,
@@ -31,7 +32,7 @@
               <p id="value">3</p>
             </div>
           </div>
-          <%= f.submit "Submit review", class: "btn btn-primary submit-rating" %>
+            <%= f.submit "Envoyez votre avis", class: "btn btn-primary submit-rating" %>
         <% end %>
       </div>
     </div>

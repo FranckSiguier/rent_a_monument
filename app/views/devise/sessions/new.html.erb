@@ -16,12 +16,12 @@
                         required: false,
                         input_html: { autocomplete: "current-password" },
                         label: false,
-                        placeholder: 'Password' %>
+                        placeholder: 'Mot de passe' %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "btn btn-ghost" %>
+            <%= f.button :submit, "Se connecter", class: "btn btn-ghost" %>
           </div>
         <% end %>
 
